@@ -24,7 +24,6 @@ int main(){
     }
     
     if(s==m) cout<<s<<endl;
-     else cout<<s<<endl<<m<<endl;
     else cout<<s<<endl<<m<<endl;
     return 0;
 }
