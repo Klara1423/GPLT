@@ -1,29 +1,32 @@
-#include<iostream>
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <cstring>
 using namespace std;
-struct stu{
-    char id[16];
-    int x;
-    int y;
-}b[1000];
+const int N = 1005;
 
-int main(){
-    int n=0,m=0;
-    
-    cin>>n;
-    for(int i=0;i<n;i++){
-        cin>>b[i].id;
-        getchar();
-        cin>>b[i].x>>b[i].y;
+int main()
+{
+    int n = 0, m = 0, t[N] = {0};
+    char id[N][20] = {0};
+
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        int x = 0, y = 0; 
+        char z[20] = {0};
+        cin >> z >> x >> y;
+        strcpy(id[x], z);
+        t[x] = y;
     }
-    cin>>m;
 
-    for(int i=0,a=0;i<m;i++){
-        cin>>a;
-        for(int j=0;j<n;j++){
-            if(a==b[j].x){
-                cout<<b[j].id<<" "<<b[j].y<<endl;
-            }
-        }
-    }    
+    cin >> m;
+    for (int i = 0, a = 0; i < m; i++)
+    {
+        cin >> a;
+        cout << id[a] << " " << t[a] << endl; 
+    }
+    
+
     return 0;
 }

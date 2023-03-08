@@ -1,46 +1,50 @@
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <algorithm>
+#include <string>
 using namespace std;
-int fuc(int a,int b){
-    int c=0;
-    for(c=min(a,b);c>=1;c--){
-        if(a%c==0&&b%c==0){
-            break;
-        }
+long long gcd(long long a, long long b)
+{
+    while(b)
+    {
+        long long c = a % b;
+        a = b;
+        b = c;
     }
-    return c;
+    return a;
 }
 
-int main(){
-    int a=0,b=0;
-    int n=0,c=0,d=1;
+int main()
+{
+    long long n = 0, ans = 0, up = 0, down = 1;
+    cin >> n;
 
-    cin>>n;
-    for(int i=0;i<n;i++){
-        scanf("%d/%d",&a,&b);
-        c=a*d+b*c;
-        d=abs(d*b);
+    for (int i = 0; i < n; i++)
+    {
+        long long x = 0, y = 0;
+        scanf("%lld/%lld", &x, &y);
+        up = up * y + down * x;
+        down = y * down;
+    }
+    
+    if (down != 0) ans = up / down;
 
-        if(c){
-            int q=fuc(abs(c),d);
-            c/=q;
-            d/=q;  
-        }
+    if (down != 0 && up % down != 0)
+    {
+        long long t = gcd(abs(up), down);
+        up /= t;
+        down /= t;
     }
 
-    if(c==0){
-        cout<<'0';
-    }else if(abs(c)>d){
-        if(abs(c)%d==0){
-            cout<<c/d;
-        }else{
-            cout<<abs(c/d)<<" "<<c%d<<'/'<<d;
-        }
-    }else if(c==d){
-        cout<<'1';
-    }else{
-        cout<<c<<'/'<<d;
+    if (up == 0)
+        cout << 0;
+    else if (up % down == 0)
+        cout << ans;
+    else if (abs(up) > down)
+    {
+        up -= ans * down;
+        cout << ans << " " << up << "/" << down;
     }
-
+    else
+        cout << up << "/" << down;
     return 0;
 }
