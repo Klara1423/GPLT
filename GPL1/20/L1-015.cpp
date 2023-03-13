@@ -1,15 +1,18 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-    int a=0;
-    char c=0;
-    cin>>a>>c;
+int main()
+{
+    int n = 0;
+    char ch = 0;
+    cin >> n >> ch;
 
-    for(int i=0;i<a/2.0;i++){
-        for(int j=0;j<a;j++){
-            cout<<c;
+    for (int i = 0; i < n / 2.0; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << ch;
         }
-        cout<<endl;
+        cout << endl;
     }
     return 0;
 }

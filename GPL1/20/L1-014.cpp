@@ -1,6 +1,7 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-    cout<<"This is a simple problem.";
+int main()
+{
+    cout << "This is a simple problem.";
     return 0;
 }

@@ -1,23 +1,30 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
+#include <iomanip>
 using namespace std;
-int main(){
-    double p=0,f=0;
+int main()
+{
+    double ans = 0, n = 0;
     string str;
-    getline(cin,str);
-    
-    for(int i=0;i<str.size();i++){
-        if(str[i]=='2')f++;
+    cin >> str;
+
+    for (int i = 0; i < str.size(); i++)
+        if (str[i] == '2')
+            n++;
+
+    if (str[0] == '-')
+    {
+        ans = n / (str.size() - 1);
+        ans *= 1.5;
     }
-    
-    if(str[0]=='-'){
-        p=f/(str.size()-1);
-        p*=1.5;
-    }else{
-        p=f/str.size(); 
+    else
+    {
+        ans = n / str.size();
     }
-    if(str[str.size()-1]=='0'||str[str.size()-1]=='2'||str[str.size()-1]=='4'||str[str.size()-1]=='6'||str[str.size()-1]=='8') p*=2;
-    
-    printf("%.2lf%\n",p*100);
+
+    if (str[str.size() - 1] == '0' || str[str.size() - 1] == '2' || str[str.size() - 1] == '4' || str[str.size() - 1] == '6' || str[str.size() - 1] == '8')
+        ans *= 2;
+
+    cout << fixed << setprecision(2) << ans * 100 << "%" << endl;
     return 0;
 }

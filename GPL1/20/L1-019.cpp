@@ -1,15 +1,16 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int a = 0, b = 0, n = 0, x = 0, y = 0;
-    cin >> a >> b >> n;
-    for (int i = 0; i < n; i++)
-    {
-        int p = 0, q = 0, m = 0, n = 0;
-        cin >> p >> q >> m >> n;
-        int t = p + m;
+    int a = 0, b = 0, len = 0, x = 0, y = 0;
+    cin >> a >> b >> len;
 
-        if (q == t && n != t)
+    for (int i = 0; i < len; i++)
+    {
+        int A0 = 0, A1 = 0, B0 = 0, B1 = 0;
+        cin >> A0 >> A1 >> B0 >> B1;
+        int sum = A0 + B0;
+
+        if (A1 == sum && B1 != sum)
         {
             x++;
             if (x > a) 
@@ -18,7 +19,7 @@ int main(){
                 return 0;
             }
         }
-        else if(q != t && n == t)
+        else if(A1 != sum && B1 == sum)
         {
             y++;
             if (y > b) 
