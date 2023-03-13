@@ -1,22 +1,22 @@
-#include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
-enum subject{ling,yi,er,san,si,wu,liu,qi,ba,jiu,len};
 
-int main(){
-    char b=0,k=0;
-    char const *a[len]={"ling","yi","er","san","si","wu","liu","qi","ba","jiu"};
-    
-    while(cin>>b&&b!=EOF){
-        if(b=='-'){
-            cout<<"fu";
-            k++;
-        } 
-        else if(k==0){
-            cout<<a[b-'0'];
+int main()
+{
+    char ch = 0, k = 0;
+    string nums[] = {"ling", "yi", "er", "san", "si", "wu", "liu", "qi", "ba", "jiu"};
+
+    while (cin >> ch)
+    {
+        if (ch == '-')
+        {
+            cout << "fu";
             k++;
         }
-        else{
-            cout<<" "<<a[b-'0'];
+        else
+        {
+            cout << (k == 0 ? "" : " ") << nums[ch - '0'];
             k++;
         }
     }

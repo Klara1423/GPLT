@@ -2,16 +2,6 @@
 #include <algorithm>
 #include <string>
 using namespace std;
-long long gcd(long long a, long long b)
-{
-    while(b)
-    {
-        long long c = a % b;
-        a = b;
-        b = c;
-    }
-    return a;
-}
 
 int main()
 {
@@ -30,7 +20,7 @@ int main()
 
     if (down != 0 && up % down != 0)
     {
-        long long t = gcd(abs(up), down);
+        long long t = __gcd(abs(up), down);
         up /= t;
         down /= t;
     }

@@ -1,18 +1,20 @@
-#include<iostream>
-#include<cstdio>
+#include <iostream>
+#include <iomanip>
 using namespace std;
-int main(){
-    int a=0,b=0,j=1,sum=0;
-    cin>>a>>b;
 
-    for(int i=a;i<=b;i++,j++){
-        sum+=i;
-        printf("%5d",i);
-        if(j%5==0) cout<<endl;
+int main()
+{
+    int a = 0, b = 0, sum = 0, len = 0;
+    cin >> a >> b;
+
+    for (int i = a; i <= b; i++)
+    {
+        sum += i, len++;
+        cout << setw(5) << i;
+        if(len % 5 == 0) cout << endl;
     }
-    
-    if((j-1)%5==0) cout<<"Sum = "<<sum;
-    else cout<<endl<<"Sum = "<<sum;
 
+    if(len % 5 != 0) cout << endl;
+    cout << "Sum = " << sum;
     return 0;
 }

@@ -1,19 +1,17 @@
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <algorithm>
 using namespace std;
-int main(){
-    int a[3]={0};
+int main()
+{
+    int num[3] = {0};
 
-    for(int i=0;i<3;i++){
-        cin>>a[i];
-    }
+    for (int i = 0; i < 3; i++)
+        cin >> num[i];
 
-    sort(a,a+3);
+    sort(num, num + 3);
 
-    for(int i=0;i<3;i++){
-        if(i) cout<<"->"<<a[i];
-        else cout<<a[i];
-    }
+    for (int i = 0; i < 3; i++)
+        cout <<(i == 0 ? "" : "->") << num[i];
 
     return 0;
-} 
+}
