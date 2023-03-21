@@ -1,18 +1,19 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-    int a=0;
-    cin>>a;
+int main()
+{
+    int t = 0;
+    cin >> t;
 
-    while(a--){
-        char ch=0;
-        double b=0; 
-        cin>>ch>>b;
-        if(ch=='M'){
-            printf("%.2lf\n",b/1.09);
-        }else{
-            printf("%.2lf\n",b*1.09);
-        }    
+    while (t--)
+    {
+        char ch = 0;
+        double n = 0;
+        cin >> ch >> n;
+
+        if (ch == 'M') printf("%.2lf\n", n / 1.09);
+        else printf("%.2lf\n", n * 1.09);
     }
+
     return 0;
 }

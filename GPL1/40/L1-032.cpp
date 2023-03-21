@@ -1,26 +1,30 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
-int main(){
-    int a=0;
-    char b=0;
-    string s;
 
-    cin>>a>>b;
+int main()
+{
+    int n = 0;
+    char ch = 0;
+    string str;
+
+    cin >> n >> ch;
     getchar();
-    getline(cin,s);
+    getline(cin, str);
 
-    if(s.size()>a){
-        for(int i=s.size()-a;i<s.size();i++){
-            cout<<s[i];
+    int len = str.size();
+    if(n <= len)
+    {
+        str = str.substr(len - n, n);
+    }
+    else
+    {
+        for (int i = 0; i < n - len; i++)
+        {
+            cout << ch;
         }
-        cout<<endl;
-    }else{
-        for(int i=0;i<a-s.size();i++){
-            cout<<b;
-        }
-        cout<<s<<endl;
     }
 
+    cout << str; 
     return 0;
 }
