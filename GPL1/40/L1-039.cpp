@@ -1,30 +1,28 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 int main()
 {
     int n = 0;
-    string str;
-    char ans[1000][1000] = {0};
+    string str, ans[1000];
     cin >> n;
     getchar();
     getline(cin, str);
 
-    int len = str.size() / n;
-    if (str.size() / (n * 1.0) > len)
-        len++;
+    int len = (str.size() % n == 0) ? str.size() / n : str.size() / n + 1;
 
-    for (int i = len - 1, k = 0; i >= 0; i--)
+    for (int j = len - 1, idx = 0; j >= 0; j--)
     {
-        for (int j = 0; j < n; j++)
+        for (int i = 0; i < n; i++)
         {
-            if (k < str.size())
-                ans[j][i] = str[k++];
-            else
-                ans[j][i] = ' ';
+            if(idx < str.size()) 
+                ans[i][j] = str[idx++];
+            else 
+                ans[i][j] = ' ';
         }
     }
-
+    
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < len; j++)
