@@ -6,13 +6,12 @@ int main()
 {
     int t = 0;
     cin >> t;
-
+    getchar();
     while (t--)
     {
         int tong[4] = {0};
         string str;
-        cin >> str;
-        cout << str;
+        getline(cin, str);
         for (int i = 0; i < str.size(); i++)
         {
             if (str[i] >= '0' && str[i] <= '9') tong[0]++;
