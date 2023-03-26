@@ -17,10 +17,20 @@ int main()
         cout << tmp / n;
         tmp -= (tmp / n) * n;
         tmp = tmp * 10 + 1;
-        n++;
+        len++;
     }
-    cout << " " << len;
-
+    cout << tmp / n << " " << len;
+    //     while (tmp != 0)
+    // {
+    //     cout << tmp / n;
+    //     tmp -= (tmp / n) * n;
+    //     if (tmp) 
+    //     {
+    //         tmp = tmp * 10 + 1;
+    //         len++;
+    //     }
+    // }
+    // cout << " " << len;
     return 0;
 }
 // #include <iostream>
