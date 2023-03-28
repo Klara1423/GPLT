@@ -1,16 +1,15 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-    double a=0,b=0,c=0,d=0;
-    cin>>a>>b>>c;
-    if(b){
-        d=a*1.26;
-    }else{
-        d=a*2.455;
-    }
 
-    if(d/c>1)printf("%.2lf T_T",d);
-    else printf("%.2lf ^_^",d);
+int main()
+{
+    double a = 0, b = 0, c = 0, ans = 0;
+    cin >> a >> b >> c;
+    
+    if (b) ans = a * 1.26;
+    else ans = a * 2.455;
 
+    if (ans > c) printf("%.2lf T_T\n", ans);
+    else printf("%.2lf ^_^\n", ans);
     return 0;
 }

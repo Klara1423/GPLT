@@ -1,12 +1,14 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-    int a=0,i=0;
-    while(1){
-        cin>>a;
-        i++;
-        if(a==250){
-            cout<<i;
+
+int main()
+{
+    int n = 0;
+    for (int i = 1; cin >> n; i++)
+    {
+        if (n == 250)
+        {
+            cout << i;
             break;
         }
     }

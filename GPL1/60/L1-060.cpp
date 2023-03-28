@@ -1,9 +1,10 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-    int a=0,b=0,c=0;
-    cin>>a>>b;
-    c=50*(a-b);
-    cout<<c;
+int main()
+{
+    int x = 0, y = 0, ans = 0;
+    cin >> x >> y;
+    ans = 0.5 * 100 * (100- (100 - x) - y);
+    cout << ans;
     return 0;
 }

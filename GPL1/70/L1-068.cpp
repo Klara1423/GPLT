@@ -1,14 +1,19 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-    int n=0;
-    double a=0,s=0;
-    cin>>n;
-    for(int i=0;i<n;i++){
-        cin>>a;
-        s+=1/a;
+
+int main()
+{
+    double n = 0, sum = 0, ans = 0;
+    int t = 0;
+    cin >> t;
+
+    for (int i = 0; i < t; i++)
+    {
+        cin >> n;
+        sum += 1 / n;
     }
-    s/=n;
-    printf("%.2lf",1/s);
+    ans = t / sum;
+    printf("%.2lf", ans);
+
     return 0;
 }

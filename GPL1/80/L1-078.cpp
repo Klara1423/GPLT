@@ -1,24 +1,31 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
 
-int main(){
-    int n=0,m=0,sum=0;
-    string s;
-    cin>>n>>m;
+int main()
+{
+    int n = 0, m = 0;
+    bool flag = true;
+    cin >> n >> m;
     getchar();
 
-    
-    for(int i=0;i<n;i++){
-        getline(cin,s);
-       
-        if(s.find("qiandao")==-1&&s.find("easy")==-1) sum++;
-        
-        if(sum-1==m){
-            cout<<s;
-            return 0;
+    while (n--)
+    {
+        string str;
+        getline(cin, str);
+
+        if (str.find("qiandao") == -1 && str.find("easy") == -1) 
+        {
+            if (m) m--;
+            else 
+            {
+                cout << str;
+                flag = false;
+            }
         }
     }
-    cout<<"Wo AK le";
+
+    if(flag) cout << "Wo AK le";
+
     return 0;
 }

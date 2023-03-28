@@ -1,9 +1,10 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
-int main(){
+int main()
+{
     string str;
-    cin>>str;
-    cout<<"Hello "<<str;
+    cin >> str;
+    cout << "Hello " << str;
     return 0;
 }

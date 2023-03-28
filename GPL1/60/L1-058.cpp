@@ -1,19 +1,34 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
-int main(){
-    string str=0;
-    getline(cin,str);
-    for(int i=0,s=0;i<s;i++){
-        if(str[i]=='6') s++;
-        
-        if(s>9) cout<<"27";
-        else if(s>3) cout<<'9';
-        else if(s>0){
-            while(s--) cout<<'6';
-        }
-        cout<<str[i];
 
+int main()
+{
+    string str, ans;
+    getline(cin, str);
+    ans = str;
+    str += " ";
+    
+    for (int i = 0, t = 0; i < str.size(); i++)
+    {
+        if (str[i] == '6')
+        {
+            t++;
+        }
+        else
+        {
+            if (t > 9)
+            {
+                ans.replace(ans.find("6666"), t, "27");
+            }
+            else if(t > 3)
+            {
+                ans.replace(ans.find("6666"), t, "9");
+            }
+            t = 0;
+        }
     }
+
+    cout << ans; 
     return 0;
 }
