@@ -1,35 +1,32 @@
 #include <iostream>
 using namespace std;
+
 int main()
 {
-    int a[6] = {0}, b[6] = {0}, n = 0;
-    for (int i = 0; i < 6; i++)
+    int n = 0, in[6] = {0}, ans[6] = {0};
+
+    for (int i = 0; i < 6; i++) 
     {
-        cin >> a[i];
-        b[i] = a[i];
+        cin >> in[i];
+        ans[i] = in[i] == 6 ? 5 : 6;
     }
 
     cin >> n;
-    for (int i = 0; i < 6; i++)
-    {
-        if (a[i] == 6) a[i]--;
-        else a[i] = 6;
-    }
+    n--;
 
-    for (int i = 0; i < n - 1; i++)
+    while (n--)
     {
-        for (int j = 0; j < 6; j++)
+        for (int i = 0; i < 6; i++)
         {
-            if ((a[j] - 1) != b[j]) a[j]--;
-            else a[j] -= 2;
+            ans[i]--;
+            if (ans[i] == in[i]) ans[i]--;
         }
     }
 
     for (int i = 0; i < 6; i++)
     {
-        if (i) cout << " " << a[i];
-        else cout << a[i];
+        cout << (i == 0 ? "" : " ") << ans[i];
     }
-
+    
     return 0;
 }
